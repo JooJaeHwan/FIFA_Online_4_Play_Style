@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>FIFA ONLINE4 Your Play Style</title>
+</head>
+<body>
+    <div class="navbar navbar-light bg-light text-center">
+        <div class="container">
+        
+        <a href="#" class="navbar-brand">
+        <strong>FIFA ONLINE4 Your Play Style</strong>
+        </a>
+    </div>
+    </div>
+    <section class="py-5 text-center container">
+    <div >
+        <h1 class="fw-bolder">
+            <strong>Your Play Style is !!!! </strong>
+            </h1>
+    </div>
+    <!-- 오늘 날씨 -->
+   
+    <h2>
+    <br>
+    {% if play_style != 9 %}
+    <div style="padding:20x;">
+        <span class="Style">당신은 </span>
+    {% else %}
+    <p>
+        <!-- 공백 -->
+    </p>
+    {% endif %}
+    </h2>
+    {% if play_style == 0 %}
+    <h3><span style="color: rosybrown;">평범한 축구</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 1: %}
+    <h3><span style="color: rosybrown;">침투 축구</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 2: %}
+    <h3><span style="color: rosybrown;">역습 축구</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 3: %}
+    <h3><span style="color: rosybrown;">티키타카</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 4: %}
+    <h3><span style="color: rosybrown;">압박 축구</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 5: %}
+    <h3><span style="color: rosybrown;">측면 공략 공격</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 6: %}
+    <h3><span style="color: rosybrown;">2선 활용 공격</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 7: %}
+    <h3><span style="color: rosybrown;">중앙 공략 공략</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 8: %}
+    <h3><span style="color: rosybrown;">중앙 관제탑 미드필더</span> 스타일에 가깝습니다!</h3>
+
+    {% elif play_style == 9: %}
+    <h3>죄송합니다... 데이터가 없습니다...</h3>
+    {% endif %}
+    </br>   
+    <p>
+        <!-- 공백 -->
+    </p>
+    <p>
+        <!-- 공백 -->
+    </p>
+    <!-- 바람세기 -->
+    {% if play_style == 0 %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/Ronaldo5-390x523.png" width="500" height="500">
+    </h4>
+    {% elif play_style == 1: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/erling-braut-haland-60-390x531.png" width="500" height="500">
+    </h4>
+    {% elif play_style == 2: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/son-heung-min-22-204x540.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 3: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/neymar-lionel-messi-390x394.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 4: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/lautaro-martinez-36-347x540.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 5: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/trent-alexander-arnold-54-239x540.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 6: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/emile-smith-rowe-5-355x540.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 7: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/bruno-fernandes-62-390x507.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 8: %}
+    <h4>
+        <img src="https://www.footyrenders.com/render/kevin-de-bruyne-56-390x515.png" width="500" height="500">
+
+    </h4>
+    {% elif play_style == 9: %}
+    <h4>
+        <img src="https://w7.pngwing.com/pngs/1010/369/png-transparent-apple-apple-element-apple-illustration-other-food-leaf-thumbnail.png" width="500" height="500">
+    </h4>
+    {% endif %}
+    
+    <p>
+        <!-- 공백 -->
+    </p>
+    {% if play_style == 0 %}
+    <form action="/user/4-1-4-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-4-1" />
+        </p>
+    </form> 
+    <form action="/user/4-2-3-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-2-3-1" />
+        </p>
+    </form> 
+
+    {% elif play_style == 1 %}
+    <form action="/user/4-1-2-3_W" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_W" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-3_F" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_F" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-1-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-1-2" />
+        </p>
+    </form> 
+
+    {% elif play_style == 2 %}
+    <form action="/user/4-3-1-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-3-1-2" />
+        </p>
+    </form> 
+    <form action="/user/4-2-3-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-2-3-1" />
+        </p>
+    </form> 
+    <form action="/user/4-2-2-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-2-2-2" />
+        </p>
+    </form> 
+
+    {% elif play_style == 3 %}
+    <form action="/user/4-1-4-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-4-1" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-3_W" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_W" />
+        </p>
+    </form> 
+
+    {% elif play_style == 4 %}
+    <form action="/user/4-4-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-4-2" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-3_F" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_F" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-3_W" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_W" />
+        </p>
+    </form> 
+
+    {% elif play_style == 5 %}
+    <form action="/user/4-1-4-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-4-1" />
+        </p>
+    </form> 
+    <form action="/user/4-2-2-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-2-2-2" />
+        </p>
+    </form> 
+
+    {% elif play_style == 6 %}
+    <form action="/user/4-3-3" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-3-3" />
+        </p>
+    </form> 
+    <form action="/user/4-4-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-4-2" />
+        </p>
+    </form> 
+
+    {% elif play_style == 7 %}
+    <form action="/user/4-1-2-1-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-1-2" />
+        </p>
+    </form> 
+
+    {% elif play_style == 8 %}
+    <form action="/user/4-1-2-3_W" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_W" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-3_F" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_F" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-1-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-1-2" />
+        </p>
+    </form> 
+
+    {% else %}
+    <form action="/user/4-1-2-3_W" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_W" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-3_F" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-3_F" />
+        </p>
+    </form> 
+    <form action="/user/4-1-2-1-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-2-1-2" />
+        </p>
+    </form> 
+    <form action="/user/4-3-3" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-3-3" />
+        </p>
+    </form> 
+    <form action="/user/4-4-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-4-2" />
+        </p>
+    </form> 
+    <form action="/user/4-1-4-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-1-4-1" />
+        </p>
+    </form> 
+    <form action="/user/4-2-2-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-2-2-2" />
+        </p>
+    </form> 
+    <form action="/user/4-3-1-2" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" name="play_style"
+            value="4-3-1-2" />
+        </p>
+    </form> 
+    <form action="/user/4-2-3-1" method="post">
+        <p>
+            <input type="submit" style="background-color: rgba(81, 255, 0, 0.51);" iname="play_style"
+            value="4-2-3-1" />
+        </p>
+    </form> 
+    {% endif %}
+    </div>
+</section>
+<p>OpenAPI 제공 NEXON</p>
+</body>
+</html>

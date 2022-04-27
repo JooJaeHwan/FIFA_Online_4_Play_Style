@@ -13,3 +13,4 @@ def User(conn, cur, user):
             continue
         user = (user_["accessId"], user_["nickname"], d["division"])
         cur.execute('INSERT OR IGNORE INTO User (id, nickname, division_id) VALUES (?, ?, ?)', user)
+        

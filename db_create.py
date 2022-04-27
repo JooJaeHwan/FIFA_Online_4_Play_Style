@@ -4,6 +4,10 @@ import os
 DB_FILENAME = 'Match2.db'
 DB_FILEPATH = os.path.join(os.getcwd(), DB_FILENAME)
 
+DB_FILEPATH2 = os.path.join(os.getcwd(), "User.db")
+conn2 = sqlite3.connect(DB_FILEPATH2)
+cur2 = conn2.cursor()
+
 conn = sqlite3.connect(DB_FILEPATH)
 cur = conn.cursor()
 
@@ -150,7 +154,7 @@ CREATE TABLE IF NOT EXISTS Season_Class (
 ''')
 
 # 유저 테이블 만들기
-cur.execute('''
+cur2.execute('''
 CREATE TABLE IF NOT EXISTS User (
     id VARCHAR NOT NULL PRIMARY KEY,
     nickname VARCHAR,

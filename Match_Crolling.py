@@ -13,14 +13,17 @@ scheduler = BlockingScheduler({'apscheduler.timezone':'Asia/seoul'})
 def Crolling():
     DB_FILENAME = 'Match2.db'
     DB_FILEPATH = os.path.join(os.getcwd(), DB_FILENAME)
-
+    DB_FILEPATH2 = os.path.join(os.getcwd(), "User.db")
+    conn2 = sqlite3.connect(DB_FILEPATH2)
+    cur2 = conn2.cursor()
   
-
+    start = time.time()
     i = 0
     cnt = 1
     match_id = []
-    while i < 2500:
+    while i < 800:
         # sqlite와 연결
+        
         conn = sqlite3.connect(DB_FILEPATH)
         cur = conn.cursor()
 
@@ -34,7 +37,7 @@ def Crolling():
         
         # Match 세부 정보를 받아오는 API 주소
         for mi in match_id:
-            start = time.time()
+            
             Match_url = f'https://api.nexon.co.kr/fifaonline4/v1.0/matches/{mi}'
             match_data = requests.get(Match_url, headers=headers)
 
@@ -53,9 +56,9 @@ def Crolling():
             # User 테이블 데이터 채우기
             home_user = match["matchInfo"][0]["accessId"]
             away_user = match["matchInfo"][1]["accessId"]
-            User(conn, cur, home_user)
-            User(conn, cur, away_user)
-
+            User(conn2, cur2, home_user) 
+            User(conn2, cur2, away_user)
+            conn2.commit()
             # Match_Home_Users 테이블 데이터 채우기
             match_home_users = (
                                 match["matchId"], 
@@ -457,14 +460,14 @@ def Crolling():
             )
 
             print(f"{cnt}번째 데이터 수집")
-            cnt += 1
-            end = time.time()
-            print(f"{end - start:.2f} sec")
+
             conn.commit()
-            
+            cnt += 1
         i += 1
-
+    conn2.close()
     conn.close()
-
-scheduler.add_job(func=Crolling, trigger='interval', hours=24, start_date='2022-04-19 09:41:00')
+    end = time.time()
+    print(f"{end - start:.2f} sec")
+    
+scheduler.add_job(func=Crolling, trigger='interval', hours=1, start_date='2022-04-26 16:30:00')
 scheduler.start()

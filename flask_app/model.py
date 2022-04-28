@@ -202,7 +202,7 @@ def pickling(pipe, Match_merge):
         Match_merge.to_csv("./Match_merge.csv", index=False)
         pd.DataFrame(user_data, columns=["id", "nickname"]).to_csv("./User.csv", index=False)
 pickling(pipe, Match_merge)
-# scheduler.add_job(func=pickling, trigger='interval', hours=24, start_date='2022-04-20 09:00:00')
-# scheduler.start()
+scheduler.add_job(func=pickling, trigger='interval', hours=24, start_date='2022-04-20 09:00:00')
+scheduler.start()
 
 
